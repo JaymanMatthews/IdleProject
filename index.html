@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Idle Prototype</title>
+        
+        <style>
+            .top {
+                float: Top;
+                height: 20%;
+            }
+
+            .bottom {
+                float: Bottom;
+                height: 80%;
+            }
+
+            .currencyContainer {
+                background-color: rgb(238, 238, 238, 0.6);
+                width: 50%;
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 24px;
+                font-weight: bold;
+            }
+            
+            .settings {}
+            .upgradeContainer {
+                width: 50%;
+            }
+
+            .basicUpgradeContainer {
+                position: relative;
+                background-color: rgb(238, 238, 238, 0.6);
+                padding: 10px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="top">
+            <center>
+                <h1>Idle Prototype</h1>
+                <div class="currencyContainer">
+                    Currency: <span id="currency">1.0</span>
+                </div>
+                <div class="tabs">
+                    <button id="basicUpgradesTab" style="height: 40px; width: 170px; font-size: 18px; font-weight: bold;">Basic Upgrades</button>
+                    <button id="settingsTab" style="height: 40px; width: 170px; font-size: 18px; font-weight: bold;">Settings</button>
+                </div>
+            </center>
+        </div>
+        <div class="bottom">
+            <center>
+                <div class="upgradeContainer">
+                    <div id="basicUpgrades" class="basicUpgradeContainer">
+                        <button id="basicupgrade1" style="height: 60px; width: 350px; font-size: 12px;" onclick="basicUpgrade1()">Currently increasing currency by <span id="basicupgrade1increase" style="font-weight: bold;">0.0</span> per second<br>(Upgrade to increase currency by <span id="nextupgradeincrease1" style="font-weight: bold;">0.1</span> per second)<br>Cost: <span id="basicupgrade1cost">1.0</span><br>Level <span id="currentlevel">0</span>/20</button><br><br>
+                        <button id="basicupgrade2" style="height: 60px; width: 350px; font-size: 12px;" onclick="basicUpgrade2()">Currently multiplying the base currency gain by <span id="basicupgrade2increase" style="font-weight: bold;">1.0</span><br>(Upgrade to multiply the base currency gain by <span id="nextupgradeincrease2" style="font-weight: bold;">1.5</span>)<br>Cost: <span id="basicupgrade2cost">300.0</span></button>
+                    </div>
+                </div>
+                <div id="settings" class="settingsContainer">
+                    <button id="manualsave" onclick="saveGame()">Save Game</button>
+                </div>
+            </center>
+        </div>
+
+
+
+
+
+        <script src="main.js" charset="utf-8" type="text/javascript"></script>
+    </body>
+</html>
