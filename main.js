@@ -1,5 +1,5 @@
 var gameData = {
-    currency: 5000,
+    currency: 1,
     getCurrency: function() {
         return this.currency
     },
