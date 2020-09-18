@@ -57,7 +57,7 @@ function loadGame() {
 }
 
 function hardReset() {
-    gameData.currency = 1 
+    gameData.getCurrency = 1 
     basicUpgrades.upgrade1.level = 0
     basicUpgrades.upgrade1.count = 0
     document.getElementById("currency").innerHTML = numberFormatting(gameData.getCurrency, 1)
