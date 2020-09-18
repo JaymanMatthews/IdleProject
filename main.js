@@ -60,7 +60,7 @@ function hardReset() {
     gameData.currency = 1 
     basicUpgrades.upgrade1.level = 0
     basicUpgrades.upgrade1.count = 0
-    document.getElementById("currency").innerHTML = numberFormatting(gameData.currency, 1)
+    document.getElementById("currency").innerHTML = numberFormatting(gameData.getCurrency, 1)
     document.getElementById("basicupgrade1cost").innerHTML = numberFormatting(basicUpgrades.upgrade1.costArray[basicUpgrades.upgrade1.count], 1)
     document.getElementById("basicupgrade1increase").innerHTML = numberFormatting(basicUpgrades.upgrade1.increaseArray[basicUpgrades.upgrade1.count], 1)
     document.getElementById("currentlevel").innerHTML = numberFormatting(basicUpgrades.upgrade1.level, 0)
