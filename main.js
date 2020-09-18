@@ -1,5 +1,8 @@
 var gameData = {
     currency: 5000,
+    getCurrency: function() {
+        return this.currency
+    },
     updateInterval: 1000,
     saveInterval: 15000,
     version: 0.001
@@ -23,7 +26,7 @@ var basicUpgrades = {
 }
 
 setInterval(function() {
-    gameData.currency += basicUpgrades.upgrade1.increaseArray[basicUpgrades.upgrade1.count]
+    gameData.getCurrency += basicUpgrades.upgrade1.increaseArray[basicUpgrades.upgrade1.count]
     document.getElementById("currency").innerHTML = numberFormatting(gameData.currency, 1)
 }, gameData.updateInterval)
 
@@ -51,6 +54,17 @@ function loadGame() {
         if (typeof savedGame.currentLevel !== "undefined") basicUpgrades.upgrade1.level = savedGame.currentLevel
         if (typeof savedGame.currentCount !== "undefined") basicUpgrades.upgrade1.count = savedGame.currentCount
     }
+}
+
+function hardReset() {
+    gameData.currency = 1 
+    basicUpgrades.upgrade1.level = 0
+    basicUpgrades.upgrade1.count = 0
+    document.getElementById("currency").innerHTML = numberFormatting(gameData.currency, 1)
+    document.getElementById("basicupgrade1cost").innerHTML = numberFormatting(basicUpgrades.upgrade1.costArray[basicUpgrades.upgrade1.count], 1)
+    document.getElementById("basicupgrade1increase").innerHTML = numberFormatting(basicUpgrades.upgrade1.increaseArray[basicUpgrades.upgrade1.count], 1)
+    document.getElementById("currentlevel").innerHTML = numberFormatting(basicUpgrades.upgrade1.level, 0)
+    document.getElementById("nextupgradeincrease1").innerHTML = numberFormatting(basicUpgrades.upgrade1.increaseArray[basicUpgrades.upgrade1.count + 1], 1)
 }
 
 window.onload = function() {
