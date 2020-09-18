@@ -5,6 +5,8 @@ var gameData = {
     version: 0.001
 }
 
+document.getElementById("versionnumber").innerHTML = gameData.version
+
 var basicUpgrades = {
     upgrade1: {
         costArray: [1, 4, 10, 25, 50, 120, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 250, 300],
