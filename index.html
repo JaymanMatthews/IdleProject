@@ -1,42 +1,6 @@
 <html>
     <head>
-        <title>Idle Prototype</title>
-        
-        <style>
-            .top {
-                float: Top;
-                height: 20%;
-            }
-
-            .bottom {
-                float: Bottom;
-                height: 80%;
-            }
-
-            .currencyContainer {
-                background-color: rgb(238, 238, 238, 0.6);
-                width: 50%;
-                padding: 10px;
-                border-radius: 10px;
-                font-size: 24px;
-                font-weight: bold;
-            }
-            
-            .settings {
-
-            }
-            
-            .upgradeContainer {
-                width: 50%;
-            }
-
-            .basicUpgradeContainer {
-                position: relative;
-                background-color: rgb(238, 238, 238, 0.6);
-                padding: 10px;
-                border-radius: 10px;
-            }
-        </style>
+        <title>Idle Prototype v0.001</title>
     </head>
 
     <body>
@@ -46,27 +10,31 @@
                 <div class="currencyContainer">
                     Currency: <span id="currency">1.0</span>
                 </div>
-                <div class="tabs">
-                    <button id="basicUpgradesTab" style="height: 40px; width: 170px; font-size: 18px; font-weight: bold;">Basic Upgrades</button>
-                    <button id="settingsTab" style="height: 40px; width: 170px; font-size: 18px; font-weight: bold;">Settings</button>
-                </div>
+                <ul class="tabs">
+                    <li data-tab-target="#basicupgrades" class="active tab" style="font-size: 18px; font-weight: bold;">Basic Upgrades</li>
+                    <li data-tab-target="#settings" class="tab" style="font-size: 18px; font-weight: bold;">Settings</li>
+                    <li data-tab-target="#changelog" class="tab" style="font-size: 18px; font-weight: bold;">Changelog</li>
+                </ul>
             </center>
         </div>
         <div class="bottom">
             <center>
-                <div class="upgradeContainer">
-                    <div id="basicUpgrades" class="basicUpgradeContainer">
-                        <button id="basicupgrade1" style="height: 60px; width: 350px; font-size: 12px;" onclick="basicUpgrade1()">Currently increasing currency by <span id="basicupgrade1increase" style="font-weight: bold;">0.0</span> per second<br><span id="nextupgradeincrease1">(Upgrade to increase currency by <span id="nextupgradeincrease1value" style="font-weight: bold;">0.1</span> per second)</span><br><span id="basicupgrade1cost">Cost: 1.0</span><br><span id="currentlevel">Level 0/20</span></button><br><br>
+                <div class="tab-content">
+                    <div id="basicupgrades" data-tab-content class="active">
+                        <button id="basicupgrade1" style="height: 60px; width: 350px; font-size: 12px;" onclick="basicUpgrade1()">Currently increasing currency by <span id="basicupgrade1increase" style="font-weight: bold;">0.0</span> per second<br>(Upgrade to increase currency by <span id="nextupgradeincrease1" style="font-weight: bold;">0.1</span> per second)<br><span id="basicupgrade1cost">Cost: 1.0</span><br><span id="currentlevel">Level 0/20</span></button><br><br>
                     </div>
-                </div>
-                <div id="settings" class="settingsContainer">
-                    <button id="manualsave" onclick="saveGame()">Save Game</button>
-                    <button id="hardreset" onclick="resetGame()">Reset Game</button>
+                    <div id="settings" data-tab-content>
+                        <button id="manualsave" onclick="saveGame()">Save Game</button>
+                        <button id="hardreset" onclick="resetGame()">Reset Game</button>
+                    </div>
+                    <div id="changelog" data-tab-content>
+                        <p id="v0.001"><span style="font-weight: bold;">v0.001: Pre-alpha</span><br>A very early prototype of an unnamed incremental game. Subject to change.<br>- Added a simple save/load/hard reset system.<br>- Added basic upgrade 1 (up to, and including, level 20).<br>    - This needs further balancing.</p>
+                    </div>
                 </div>
             </center>
         </div>
-
-
+        <link href="styles.css" rel="stylesheet"></link>
+        <script src="htmlspecific.js" charset="utf-8" type="text/javascript"></script>
         <script src="saveloadreset.js" charset="utf-8" type="text/javascript"></script>
         <script src="basicupgrades.js" charset="utf-8" type="text/javascript"></script>
         <script src="variables.js" charset="utf-8" type="text/javascript"></script>
