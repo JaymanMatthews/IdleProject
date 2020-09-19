@@ -22,7 +22,10 @@
                 font-weight: bold;
             }
             
-            .settings {}
+            .settings {
+
+            }
+            
             .upgradeContainer {
                 width: 50%;
             }
@@ -53,21 +56,21 @@
             <center>
                 <div class="upgradeContainer">
                     <div id="basicUpgrades" class="basicUpgradeContainer">
-                        <button id="basicupgrade1" style="height: 60px; width: 350px; font-size: 12px;" onclick="basicUpgrade1()">Currently increasing currency by <span id="basicupgrade1increase" style="font-weight: bold;">0.0</span> per second<br>(Upgrade to increase currency by <span id="nextupgradeincrease1" style="font-weight: bold;">0.1</span> per second)<br>Cost: <span id="basicupgrade1cost">1.0</span><br>Level <span id="currentlevel">0</span>/20</button><br><br>
-                        <button id="basicupgrade2" style="height: 60px; width: 350px; font-size: 12px;" onclick="basicUpgrade2()">Currently multiplying the base currency gain by <span id="basicupgrade2increase" style="font-weight: bold;">1.0</span><br>(Upgrade to multiply the base currency gain by <span id="nextupgradeincrease2" style="font-weight: bold;">1.5</span>)<br>Cost: <span id="basicupgrade2cost">300.0</span></button>
+                        <button id="basicupgrade1" style="height: 60px; width: 350px; font-size: 12px;" onclick="basicUpgrade1()">Currently increasing currency by <span id="basicupgrade1increase" style="font-weight: bold;">0.0</span> per second<br><span id="nextupgradeincrease1">(Upgrade to increase currency by <span id="nextupgradeincrease1value" style="font-weight: bold;">0.1</span> per second)</span><br><span id="basicupgrade1cost">Cost: 1.0</span><br><span id="currentlevel">Level 0/20</span></button><br><br>
                     </div>
                 </div>
                 <div id="settings" class="settingsContainer">
                     <button id="manualsave" onclick="saveGame()">Save Game</button>
-                    <button id="hardreset" onclick="hardReset()">Reset Game</button>
+                    <button id="hardreset" onclick="resetGame()">Reset Game</button>
                 </div>
             </center>
         </div>
 
 
-
-
-
+        <script src="saveloadreset.js" charset="utf-8" type="text/javascript"></script>
+        <script src="basicupgrades.js" charset="utf-8" type="text/javascript"></script>
+        <script src="variables.js" charset="utf-8" type="text/javascript"></script>
+        <script src="extrafunct.js" charset="utf-8" type="text/javascript"></script>
         <script src="main.js" charset="utf-8" type="text/javascript"></script>
     </body>
 </html>
