@@ -1,5 +1,5 @@
 function numberFormatting(variable, decimals) {
-    if (variable <= 1000) {
+    if (variable < 1000) {
         string = variable.toFixed(decimals)
     }
     else {
