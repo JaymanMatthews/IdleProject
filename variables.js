@@ -1,5 +1,5 @@
 var gameData = {
-    currency: 100000000000,
+    currency: 10,
     currencyPerSec: 0,
     updateInterval: 1000,
     saveInterval: 15000,
