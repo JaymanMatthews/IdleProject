@@ -1,37 +1,49 @@
 <html>
     <head>
-        <title>Idle Prototype v0.001</title>
+        <title>Idle Prototype v0.002</title>
     </head>
 
     <body>
         <div class="top">
             <center>
-                <h1>Idle Prototype: Version <span id="versionnumber">0.000</span></h1>
+                <h1 id="gametitle">Idle Prototype</h1>
                 <div class="currencyContainer">
-                    Currency: <span id="currency">1.0</span>
+                    Currency: <span id="currency">10</span>
                 </div>
                 <ul class="tabs">
-                    <li data-tab-target="#basicupgrades" class="active tab" style="font-size: 18px; font-weight: bold;">Basic Upgrades</li>
-                    <li data-tab-target="#settings" class="tab" style="font-size: 18px; font-weight: bold;">Settings</li>
-                    <li data-tab-target="#changelog" class="tab" style="font-size: 18px; font-weight: bold;">Changelog</li>
+                    <li data-tab-target="#basicupgradestab" class="active tab">Basic Upgrades</li>
+                    <li data-tab-target="#settingstab" class="tab">Settings</li>
+                    <li data-tab-target="#changelogtab" class="tab">Changelog</li>
                 </ul>
             </center>
         </div>
         <div class="bottom">
             <center>
                 <div class="tab-content">
-                    <div id="basicupgrades" data-tab-content class="active">
-                        <button id="basicupgrade1" style="height: 60px; width: 350px; font-size: 12px;" onclick="basicUpgrade1()">Currently increasing currency by <span id="basicupgrade1increase" style="font-weight: bold;">0.0</span> per second<br>(Upgrade to increase currency by <span id="nextupgradeincrease1" style="font-weight: bold;">0.1</span> per second)<br><span id="basicupgrade1cost">Cost: 1.0</span><br><span id="currentlevel">Level 0/20</span></button><br><br>
+                    <div id="basicupgradestab" data-tab-content class="active basicupgradescontent">
+                        <button class="basicupgrades" id="basicupgrade1" onclick="basicUpgrade1()"><i>BU1</i><br>Currency Gain: <span id="basicupgrade1increase" style="font-weight: bold;">0</span>/s<br><span id="basicupgrade1cost">Cost: 10</span><br>Level: <span id="basicupgrade1level">0/20</span></button><br><br>
+                        <button class="basicupgrades" id="basicupgrade2" onclick="basicUpgrade2()"><i>BU2</i><br>BU1 Production Gain: (<span id="basicupgrade2increase" style="font-weight: bold;">0</span>/s)/s<br><span id="basicupgrade2cost">Cost: 1.50e8</span><br>Level: <span id="basicupgrade2level">0/5</span></button>
                     </div>
-                    <div id="settings" data-tab-content>
-                        <button id="manualsave" onclick="saveGame()">Save Game</button>
-                        <button id="hardreset" onclick="resetGame()">Reset Game</button>
+                    <div id="settingstab" class="settingscontent" data-tab-content>
+                        <button class="settingsbuttons" id="manualsave" onclick="saveGame()">Save Game</button>
+                        <button class="settingsbuttons" id="hardreset" onclick="resetGame()">Reset Game</button>
                     </div>
-                    <div id="changelog" data-tab-content>
-                        <p id="v0.001"><span style="font-weight: bold;">v0.001: Pre-alpha</span><br>A very early prototype of an unnamed incremental game. Subject to change.<br>- Added a simple save/load/hard reset system.<br>- Added basic upgrade 1 (up to, and including, level 20).<br>    <small>- This needs further balancing.</small></p>
+                    <div id="changelogtab" class="changelogcontent" data-tab-content>
+                        <p id="v0.001"><span style="font-weight: bold; text-decoration: underline;">
+                        v0.001 (19/09/2020): Pre-alpha</span><br>
+                        A very early prototype of an unnamed incremental game; subject to change.<br>
+                        - Added a simple save/load/hard reset system.<br>
+                        <small>NOTE: Autosaves occur every 15 seconds.</small><br></p>
+                        <p id="v0.002"><span style="font-weight: bold; text-decoration: underline;">
+                        v0.002 (21/09/2020): Pre-alpha</span><br>
+                        - Made major changes to the visual appearance of the game using CSS.<br>
+                        - Implemented <i>BU1</i> and <i>BU2</i>.<br>
+                        <small>NOTE: The current max levels for these upgrades are 20 and 5, respectively.<br> 
+                        These upgrades still require balancing, thus their max levels may be changed in future updates.</small><br></p>
                     </div>
                 </div>
             </center>
+            <span id="versionnumber">v0.000</span>
         </div>
         <link href="styles.css" rel="stylesheet"></link>
         <script src="htmlspecific.js" charset="utf-8" type="text/javascript"></script>

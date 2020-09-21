@@ -1,18 +1,19 @@
 .top {
-    float: Top;
     height: 15%;
+    width: 100%;
 }
 
 .bottom {
-    float: Bottom;
     height: 85%;
+    width: 100%;
 }
 
 .currencyContainer {
-    background-color: rgb(238, 238, 238, 0.6);
+    background-color: rgb(196, 196, 196, 0.6);
     width: 15%;
     padding: 5px;
     border-radius: 10px;
+    font-family: Arial;
     font-size: 24px;
     font-weight: bold;
 }
@@ -25,24 +26,84 @@
     display: block;
 }
 
+#versionnumber {
+    position: absolute; right: 5px; bottom: 5px;
+    font-family: Verdana;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#gametitle {
+    font-family: Verdana;
+}
+
 .tabs {
     display: flex;
+    background-color: #000000;
+    color: #F8F8FF;
+    font-family: Verdana;
     justify-content: space-around;
     width: 15%;
     list-style-type: none;
     margin: auto;
     padding: 5px;
-    border-bottom: 1px solid black
+    border-radius: 10px
+}
+
+.basicupgrades {
+    height: 70px;
+    width: 330px;
+    cursor: pointer;
+    background-color: #000000;
+    border-color: #87CEFA;
+    border-radius: 15px;
+    color: #F8F8FF;
+    font-size: 12px;
+    font-family: Verdana;
+}
+
+.changelogcontent {
+    height: 25%;
+    width: 30%;
+    font-size: 13px;
+    font-family: Verdana;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+.settingscontent {
+    height: 14%;
+    width: 25%;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+.basicupgradescontent {
+    height: 21%;
+    width: 19%;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 15px;
 }
 
 .tab {
     cursor: pointer;
+    font-size: 13px;
+    padding: 2px;
 }
 
 .tab.active {
-    background-color: #CCC;
+    background-color: #F8F8FF;
+    color: #000000;
+    border-radius: 12px;
 }
 
-.tab:hover {
-    background-color: #AAA;
+.settingsbuttons {
+    color: #F8F8FF;
+    background-color: #000000;
+    border-color: #87CEFA;
+    border-radius: 10px;
+    font-size: 12px;
+    font-family: Verdana;
 }
