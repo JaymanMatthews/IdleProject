@@ -1,54 +1,40 @@
+'use strict';
+
 function basicUpgradesPerSec() {
-    switch (basicUpgrades.upgrade1.level) {
-        case basicUpgrades.upgrade1.maxLevel:
-            gameData.currencyPerSec += basicUpgrades.upgrade2.increaseArray[basicUpgrades.upgrade2.count]
-            gameData.currency += gameData.currencyPerSec
-            break;
-        default:
-            gameData.currencyPerSec = basicUpgrades.upgrade1.increaseArray[basicUpgrades.upgrade1.count]
-            gameData.currency += basicUpgrades.upgrade1.increaseArray[basicUpgrades.upgrade1.count]
-            break;
-    }
-    document.getElementById("currency").innerHTML = numberFormatting(gameData.currency, 0)
-    document.getElementById("basicupgrade1increase").innerHTML = numberFormatting(gameData.currencyPerSec, 0)
-}
+    game.basicUpgrades.buPerSec[2] += game.basicUpgrades.buPerSec[3] * (constants.gameData.updateInterval / 1000);
+    game.basicUpgrades.buPerSec[1] += game.basicUpgrades.buPerSec[2] * (constants.gameData.updateInterval / 1000);
+    game.basicUpgrades.buPerSec[0] +=  game.basicUpgrades.buPerSec[1] * (constants.gameData.updateInterval / 1000);
+    game.gameData.currency += game.basicUpgrades.buPerSec[0] * (constants.gameData.updateInterval / 1000);
 
-function basicUpgrade1() {
-    if (basicUpgrades.upgrade1.level < basicUpgrades.upgrade1.maxLevel) {
-        if (gameData.currency >= basicUpgrades.upgrade1.costArray[basicUpgrades.upgrade1.count]) {
-            gameData.currency -= basicUpgrades.upgrade1.costArray[basicUpgrades.upgrade1.count]
-            basicUpgrades.upgrade1.count++
-            basicUpgrades.upgrade1.level++
+    if (game.gameData.currency >= constants.prestigeData.currencyRequired || game.prestigeData.unlockVal == true) {
+        game.prestigeData.unlockVal = true;
+        makeVisible("prestigeupgrades");
+    }
+    document.getElementById("currency").innerHTML = numberFormatting(game.gameData.currency, 0);
+    document.getElementById("basicupgrade1increase").innerHTML = numberFormatting(game.basicUpgrades.buPerSec[0], 0);
+    document.getElementById("basicupgrade2increase").innerHTML = numberFormatting(game.basicUpgrades.buPerSec[1], 0);
+    document.getElementById("basicupgrade3increase").innerHTML = numberFormatting(game.basicUpgrades.buPerSec[2], 0);
+};
+
+function basicUpgrade(n, id, id2, id3, id4) {
+    if (game.basicUpgrades.level[n] < constants.basicUpgrades[n].maxLevel) {
+        if (game.gameData.currency >= constants.basicUpgrades[n].cost[game.basicUpgrades.level[n]]) {
+            game.gameData.currency -= constants.basicUpgrades[n].cost[game.basicUpgrades.level[n]];
+            document.getElementById(id).innerHTML = numberFormatting(constants.basicUpgrades[n].value[game.basicUpgrades.level[n]], 0);
+            game.basicUpgrades.buPerSec[n] = constants.basicUpgrades[n].value[game.basicUpgrades.level[n]];
+            game.basicUpgrades.level[n]++;
         }
-        document.getElementById("currency").innerHTML = numberFormatting(gameData.currency, 0)
-        document.getElementById("basicupgrade1increase").innerHTML = numberFormatting(basicUpgrades.upgrade1.increaseArray[basicUpgrades.upgrade1.count], 0)
-        document.getElementById("basicupgrade1level").innerHTML = numberFormatting(basicUpgrades.upgrade1.level, 0) + "/" + numberFormatting(basicUpgrades.upgrade1.maxLevel, 0)
-        if (basicUpgrades.upgrade1.level == basicUpgrades.upgrade1.maxLevel) {
-            document.getElementById("basicupgrade1cost").innerHTML = "Max Level Reached"
-            gameData.currencyPerSec = basicUpgrades.upgrade1.increaseArray[basicUpgrades.upgrade1.count]
+        document.getElementById("currency").innerHTML = numberFormatting(game.gameData.currency, 0);
+        document.getElementById(id2).innerHTML = numberFormatting(game.basicUpgrades.level[n], 0) + "/" + numberFormatting(constants.basicUpgrades[n].maxLevel, 0);
+        
+        if (game.basicUpgrades.level[n] == constants.basicUpgrades[n].maxLevel) {
+            document.getElementById(id3).innerHTML = "Max Level Reached";
         }
         else {
-            document.getElementById("basicupgrade1cost").innerHTML = "Cost: " + numberFormatting(basicUpgrades.upgrade1.costArray[basicUpgrades.upgrade1.count], 0)
-        }
-        makeVisible(basicUpgrades.upgrade1.level, basicUpgrades.upgrade1.maxLevel, "basicupgrade2")
-    }
-}
-
-function basicUpgrade2() {
-    if (basicUpgrades.upgrade2.level < basicUpgrades.upgrade2.maxLevel) {
-        if (gameData.currency >= basicUpgrades.upgrade2.costArray[basicUpgrades.upgrade2.count]) {
-            gameData.currency -= basicUpgrades.upgrade2.costArray[basicUpgrades.upgrade2.count]
-            basicUpgrades.upgrade2.count++
-            basicUpgrades.upgrade2.level++
-        }
-        document.getElementById("currency").innerHTML = numberFormatting(gameData.currency, 0)
-        document.getElementById("basicupgrade2increase").innerHTML = numberFormatting(basicUpgrades.upgrade2.increaseArray[basicUpgrades.upgrade2.count], 0)
-        document.getElementById("basicupgrade2level").innerHTML = numberFormatting(basicUpgrades.upgrade2.level, 0) + "/" + numberFormatting(basicUpgrades.upgrade2.maxLevel, 0)
-        if (basicUpgrades.upgrade2.level == basicUpgrades.upgrade2.maxLevel) {
-            document.getElementById("basicupgrade2cost").innerHTML = "Max Level Reached"  
-        }
-        else {
-            document.getElementById("basicupgrade2cost").innerHTML = "Cost: " + numberFormatting(basicUpgrades.upgrade2.costArray[basicUpgrades.upgrade2.count], 0)
+            document.getElementById(id3).innerHTML = "Cost: " + numberFormatting(constants.basicUpgrades[n].cost[game.basicUpgrades.level[n]], 0);
+        }    
+        if (game.basicUpgrades.level[n] == constants.basicUpgrades[n].maxLevel) {
+            makeVisible(id4);
         }
     }
-}
+};

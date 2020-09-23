@@ -1,53 +1,52 @@
 <html>
     <head>
-        <title>Idle Prototype v0.002</title>
+        <title id="gamelabel"></title>
     </head>
 
     <body>
         <div class="top">
             <center>
-                <h1 id="gametitle">Idle Prototype</h1>
-                <div class="currencyContainer">
-                    Currency: <span id="currency">10</span>
+                <h1 id="gametitle"></h1>
+                <div class="currencycontainer">
+                    <span id="currencytext"></span><span id="currency"></span>
                 </div>
                 <ul class="tabs">
-                    <li data-tab-target="#basicupgradestab" class="active tab">Basic Upgrades</li>
-                    <li data-tab-target="#settingstab" class="tab">Settings</li>
-                    <li data-tab-target="#changelogtab" class="tab">Changelog</li>
+                    <li data-tab-target="#basicupgradestab" class="active tab" id="basicupgrades"></li>
+                    <li data-tab-target="#prestigeupgradestab" class="tab" id="prestigeupgrades"></li>
+                    <li data-tab-target="#settingstab" class="tab" id="settings"></li>
+                    <li data-tab-target="#changelogtab" class="tab" id="changelog"></li>
                 </ul>
             </center>
         </div>
         <div class="bottom">
             <center>
                 <div class="tab-content">
-                    <div id="basicupgradestab" data-tab-content class="active basicupgradescontent">
-                        <button class="basicupgrades" id="basicupgrade1" onclick="basicUpgrade1()"><i>BU1</i><br>Currency Gain: <span id="basicupgrade1increase" style="font-weight: bold;">0</span>/s<br><span id="basicupgrade1cost">Cost: 10</span><br>Level: <span id="basicupgrade1level">0/20</span></button><br><br>
-                        <button class="basicupgrades" id="basicupgrade2" onclick="basicUpgrade2()"><i>BU2</i><br>BU1 Production Gain: (<span id="basicupgrade2increase" style="font-weight: bold;">0</span>/s)/s<br><span id="basicupgrade2cost">Cost: 1.50e8</span><br>Level: <span id="basicupgrade2level">0/5</span></button>
+                    <div class="active basicupgradescontent" id="basicupgradestab" data-tab-content>
+                        <button class="basicupgrades" id="basicupgrade1"><span id="basicupgrade1title"></span><br><span id="gaintext"></span><span id="basicupgrade1increase"></span><span id="persectext"></span><br><span id="basicupgrade1cost"></span><br><span id="leveltext"></span><span id="basicupgrade1level"></span></button>
+                        <button class="basicupgrades" id="basicupgrade2"><span id="basicupgrade2title"></span><br><span id="gaintext2"></span><span id="basicupgrade2increase"></span><span id="persectext2"></span><br><span id="basicupgrade2cost"></span><br><span id="leveltext2"></span><span id="basicupgrade2level"></span></button>
+                        <button class="basicupgrades" id="basicupgrade3"><span id="basicupgrade3title"></span><br><span id="gaintext3"></span><span id="basicupgrade3increase"></span><span id="persectext3"></span><br><span id="basicupgrade3cost"></span><br><span id="leveltext3"></span><span id="basicupgrade3level"></span></button>
+                        <button class="basicupgrades" id="basicupgrade4"><span id="basicupgrade4title"></span><br><span id="gaintext4"></span><span id="basicupgrade4increase"></span><span id="persectext4"></span><br><span id="basicupgrade4cost"></span><br><span id="leveltext4"></span><span id="basicupgrade4level"></span></button>
                     </div>
-                    <div id="settingstab" class="settingscontent" data-tab-content>
-                        <button class="settingsbuttons" id="manualsave" onclick="saveGame()">Save Game</button>
-                        <button class="settingsbuttons" id="hardreset" onclick="resetGame()">Reset Game</button>
+                    <div class="prestigeupgradescontent" id="prestigeupgradestab" data-tab-content>
+                        <span id="prestigetext"></span>
                     </div>
-                    <div id="changelogtab" class="changelogcontent" data-tab-content>
-                        <p id="v0.001"><span style="font-weight: bold; text-decoration: underline;">
-                        v0.001 (19/09/2020): Pre-alpha</span><br>
-                        A very early prototype of an unnamed incremental game; subject to change.<br>
-                        - Added a simple save/load/hard reset system.<br>
-                        <small>NOTE: Autosaves occur every 15 seconds.</small><br></p>
-                        <p id="v0.002"><span style="font-weight: bold; text-decoration: underline;">
-                        v0.002 (21/09/2020): Pre-alpha</span><br>
-                        - Made major changes to the visual appearance of the game using CSS.<br>
-                        - Implemented <i>BU1</i> and <i>BU2</i>.<br>
-                        <small>NOTE: The current max levels for these upgrades are 20 and 5, respectively.<br> 
-                        These upgrades still require balancing, thus their max levels may be changed in future updates.</small><br></p>
+                    <div class="settingscontent" id="settingstab" data-tab-content>
+                        <button class="settingsbuttons" id="manualsave"></button>
+                        <button class="settingsbuttons" id="hardreset"></button>
+                    </div>
+                    <div class="changelogcontent" id="changelogtab" data-tab-content>
+                        <span id="v0001title"></span><p id="v0001"></p>
+                        <span id="v0002title"></span><p id="v0002"></p>
+                        <span id="v0003title"></span><p id="v0003"></p>
                     </div>
                 </div>
             </center>
-            <span id="versionnumber">v0.000</span>
+            <span id="versionnumber"></span>
         </div>
         <link href="styles.css" rel="stylesheet"></link>
         <script src="htmlspecific.js" charset="utf-8" type="text/javascript"></script>
         <script src="saveloadreset.js" charset="utf-8" type="text/javascript"></script>
+        <script src="prestigeupgrades.js" charset="utf-8" type="text/javascript"></script>
         <script src="basicupgrades.js" charset="utf-8" type="text/javascript"></script>
         <script src="variables.js" charset="utf-8" type="text/javascript"></script>
         <script src="extrafunct.js" charset="utf-8" type="text/javascript"></script>

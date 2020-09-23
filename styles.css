@@ -8,7 +8,7 @@
     width: 100%;
 }
 
-.currencyContainer {
+.currencycontainer {
     background-color: rgb(196, 196, 196, 0.6);
     width: 15%;
     padding: 5px;
@@ -43,7 +43,7 @@
     color: #F8F8FF;
     font-family: Verdana;
     justify-content: space-around;
-    width: 15%;
+    width: 23%;
     list-style-type: none;
     margin: auto;
     padding: 5px;
@@ -62,13 +62,56 @@
     font-family: Verdana;
 }
 
+#basicupgrade1increase {
+    font-weight: bold;
+}
+
+#basicupgrade2increase {
+    font-weight: bold;
+}
+
+#basicupgrade3increase {
+    font-weight: bold;
+}
+
+#basicupgrade4increase {
+    font-weight: bold;
+}
+
 .changelogcontent {
-    height: 25%;
+    height: 49%;
     width: 30%;
     font-size: 13px;
     font-family: Verdana;
     border-style: solid;
     border-radius: 15px;
+}
+
+#v0001title {
+    font-weight: bold; 
+    text-decoration: underline;
+}
+
+#v0002title {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#v0003title {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#v0001 {
+    margin-top: 0;
+}
+
+#v0002 {
+    margin-top: 0;
+}
+
+#v0003 {
+    margin-top: 0;
 }
 
 .settingscontent {
@@ -80,11 +123,43 @@
 }
 
 .basicupgradescontent {
-    height: 21%;
+    height: 36%;
     width: 19%;
     padding: 5px;
     border-style: solid;
     border-radius: 15px;
+}
+
+#basicupgrade1 {
+    display: block;
+}
+
+#basicupgrade2 {
+    display: none;
+}
+
+#basicupgrade3 {
+    display: none;
+}
+
+#basicupgrade4 {
+    display: none;
+}
+
+.prestigeupgradescontent {
+    height: 36%;
+    width: 19%;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+#prestigeupgrades {
+    display: none;
+}
+
+#prestigetext {
+    font-weight: bold;
 }
 
 .tab {
