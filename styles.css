@@ -1,18 +1,36 @@
 .top {
-    height: 15%;
+    height: 16.5%;
     width: 100%;
 }
 
 .bottom {
-    height: 85%;
+    height: 82%;
     width: 100%;
 }
 
+.maincontainers {
+    margin-top: 15px;
+}
+
 .currencycontainer {
+    display: inline-block;
     background-color: rgb(196, 196, 196, 0.6);
-    width: 15%;
+    width: 350px;
     padding: 5px;
-    border-radius: 10px;
+    border: 3px solid black;
+    border-radius: 20px;
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.prestigetokencontainer {
+    display: none;
+    background-color: rgb(196, 196, 196, 0.6);
+    width: 350px;
+    padding: 5px;
+    border: 3px solid black;
+    border-radius: 20px;
     font-family: Arial;
     font-size: 24px;
     font-weight: bold;
@@ -38,14 +56,12 @@
 }
 
 .tabs {
-    display: flex;
     background-color: #000000;
     color: #F8F8FF;
     font-family: Verdana;
-    justify-content: space-around;
-    width: 23%;
+    height: 18.5%;
+    width: 70%;
     list-style-type: none;
-    margin: auto;
     padding: 5px;
     border-radius: 10px
 }
@@ -53,6 +69,7 @@
 .basicupgrades {
     height: 70px;
     width: 330px;
+    max-width: 100%;
     cursor: pointer;
     background-color: #000000;
     border-color: #87CEFA;
@@ -62,29 +79,60 @@
     font-family: Verdana;
 }
 
-#basicupgrade1increase {
-    font-weight: bold;
+.prestige {
+    height: 70px;
+    width: 330px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #000000;
+    border-color: red;
+    border-radius: 15px;
+    color: #F8F8FF;
+    font-size: 12px;
+    font-family: Verdana;
 }
 
-#basicupgrade2increase {
-    font-weight: bold;
+.prestigeupgrades {
+    height: 70px;
+    width: 330px;
+    max-width: 100%;
+    cursor: pointer;
+    background-color: #000000;
+    border-color: red;
+    border-radius: 15px;
+    color: #F8F8FF;
+    font-size: 12px;
+    font-family: Verdana;
 }
 
-#basicupgrade3increase {
-    font-weight: bold;
+#prestigeupgrade1title {
+    font-style: italic;
 }
 
-#basicupgrade4increase {
-    font-weight: bold;
+#basicupgrade1title {
+    font-style: italic;
+}
+
+#basicupgrade2title {
+    font-style: italic;
+}
+
+#basicupgrade3title {
+    font-style: italic;
+}
+
+#basicupgrade4title {
+    font-style: italic;
 }
 
 .changelogcontent {
-    height: 49%;
+    height: 80%;
     width: 30%;
     font-size: 13px;
     font-family: Verdana;
     border-style: solid;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 #v0001title {
@@ -102,6 +150,11 @@
     text-decoration: underline;
 }
 
+#v0004title {
+    font-weight: bold; 
+    text-decoration: underline;
+}
+
 #v0001 {
     margin-top: 0;
 }
@@ -114,58 +167,77 @@
     margin-top: 0;
 }
 
+#v0004 {
+    margin-top: 0;
+}
+
 .settingscontent {
     height: 14%;
     width: 25%;
     padding: 5px;
     border-style: solid;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .basicupgradescontent {
-    height: 36%;
+    height: 37.25%;
     width: 19%;
     padding: 5px;
     border-style: solid;
-    border-radius: 15px;
-}
-
-#basicupgrade1 {
-    display: block;
-}
-
-#basicupgrade2 {
-    display: none;
-}
-
-#basicupgrade3 {
-    display: none;
-}
-
-#basicupgrade4 {
-    display: none;
+    border-radius: 10px;
 }
 
 .prestigeupgradescontent {
-    height: 36%;
+    height: 50%;
     width: 19%;
     padding: 5px;
     border-style: solid;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 #prestigeupgrades {
     display: none;
 }
 
-#prestigetext {
-    font-weight: bold;
-}
-
 .tab {
+    float: left;
     cursor: pointer;
     font-size: 13px;
-    padding: 2px;
+    padding: 4px;
+    margin-right: 10px;
+}
+
+#tabcontent {
+    margin-top: -2%;
+}
+
+#basicupgrades {
+    margin-left: 9px;
+}
+
+#basicupgradesswitch {
+    float: left;
+    border: 2px solid #87CEFA;
+    margin-left: 9px;
+    border-radius: 15px;
+}
+
+#prestigeupgradesswitch {
+    float: left;
+    border: 2px solid red;
+    border-radius: 15px;
+}
+
+#changelogswitch {
+    float: right;
+    border: 2px solid #F8F8FF;
+    border-radius: 15px;
+}
+
+#settingsswitch {
+    float: right;
+    border: 2px solid #F8F8FF;
+    border-radius: 15px;
 }
 
 .tab.active {

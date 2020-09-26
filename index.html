@@ -1,34 +1,39 @@
 <html>
     <head>
-        <title id="gamelabel"></title>
+
     </head>
 
     <body>
         <div class="top">
             <center>
-                <h1 id="gametitle"></h1>
-                <div class="currencycontainer">
-                    <span id="currencytext"></span><span id="currency"></span>
+                <div class="maincontainers">
+                    <div class="currencycontainer">
+                        <span id="currencytext"></span><span id="currency"></span>
+                    </div>
+                    <div class="prestigetokencontainer" id="prestigetokencontainer">
+                        <span id="prestigetokentext"></span><span id="prestigetokens"></span>
+                    </div>
                 </div>
                 <ul class="tabs">
-                    <li data-tab-target="#basicupgradestab" class="active tab" id="basicupgrades"></li>
-                    <li data-tab-target="#prestigeupgradestab" class="tab" id="prestigeupgrades"></li>
-                    <li data-tab-target="#settingstab" class="tab" id="settings"></li>
-                    <li data-tab-target="#changelogtab" class="tab" id="changelog"></li>
+                    <li data-tab-target="#basicupgradestab" class="active tab" id="basicupgradesswitch"></li>
+                    <li data-tab-target="#prestigeupgradestab" class="tab" id="prestigeupgradesswitch"></li>
+                    <li data-tab-target="#settingstab" class="tab" id="settingsswitch"></li>
+                    <li data-tab-target="#changelogtab" class="tab" id="changelogswitch"></li>
                 </ul>
             </center>
         </div>
         <div class="bottom">
             <center>
-                <div class="tab-content">
+                <div class="tab-content" id="tabcontent">
                     <div class="active basicupgradescontent" id="basicupgradestab" data-tab-content>
-                        <button class="basicupgrades" id="basicupgrade1"><span id="basicupgrade1title"></span><br><span id="gaintext"></span><span id="basicupgrade1increase"></span><span id="persectext"></span><br><span id="basicupgrade1cost"></span><br><span id="leveltext"></span><span id="basicupgrade1level"></span></button>
-                        <button class="basicupgrades" id="basicupgrade2"><span id="basicupgrade2title"></span><br><span id="gaintext2"></span><span id="basicupgrade2increase"></span><span id="persectext2"></span><br><span id="basicupgrade2cost"></span><br><span id="leveltext2"></span><span id="basicupgrade2level"></span></button>
-                        <button class="basicupgrades" id="basicupgrade3"><span id="basicupgrade3title"></span><br><span id="gaintext3"></span><span id="basicupgrade3increase"></span><span id="persectext3"></span><br><span id="basicupgrade3cost"></span><br><span id="leveltext3"></span><span id="basicupgrade3level"></span></button>
-                        <button class="basicupgrades" id="basicupgrade4"><span id="basicupgrade4title"></span><br><span id="gaintext4"></span><span id="basicupgrade4increase"></span><span id="persectext4"></span><br><span id="basicupgrade4cost"></span><br><span id="leveltext4"></span><span id="basicupgrade4level"></span></button>
+                        <button class="basicupgrades" id="basicupgrade1"><span id="basicupgrade1title"></span><br><span id="basicupgrade1increase"></span><br><span id="basicupgrade1cost"></span><br><span id="leveltext1"></span></button>
+                        <button class="basicupgrades" id="basicupgrade2"><span id="basicupgrade2title"></span><br><span id="basicupgrade2increase"></span><br><span id="basicupgrade2cost"></span><br><span id="leveltext2"></span></button>
+                        <button class="basicupgrades" id="basicupgrade3"><span id="basicupgrade3title"></span><br><span id="basicupgrade3increase"></span><br><span id="basicupgrade3cost"></span><br><span id="leveltext3"></span></button>
+                        <button class="basicupgrades" id="basicupgrade4"><span id="basicupgrade4title"></span><br><span id="basicupgrade4increase"></span><br><span id="basicupgrade4cost"></span><br><span id="leveltext4"></span></button>
                     </div>
                     <div class="prestigeupgradescontent" id="prestigeupgradestab" data-tab-content>
-                        <span id="prestigetext"></span>
+                        <button class="prestige" id="prestigebutton"></button>
+                        <button class="prestigeupgrades" id="prestigeupgrade1"><span id="prestigeupgrade1title"></span><br><span id="prestigeupgrade1effect"></span><br><span id="prestigeupgrade1cost"></span><br><span id="leveltext5"></span></button>
                     </div>
                     <div class="settingscontent" id="settingstab" data-tab-content>
                         <button class="settingsbuttons" id="manualsave"></button>
@@ -38,18 +43,21 @@
                         <span id="v0001title"></span><p id="v0001"></p>
                         <span id="v0002title"></span><p id="v0002"></p>
                         <span id="v0003title"></span><p id="v0003"></p>
+                        <span id="v0004title"></span><p id="v0004"></p>
                     </div>
                 </div>
             </center>
             <span id="versionnumber"></span>
         </div>
         <link href="styles.css" rel="stylesheet"></link>
+        <script src="break_eternity.min.js" charset="utf-8" type="text/javascript"></script>
         <script src="htmlspecific.js" charset="utf-8" type="text/javascript"></script>
         <script src="saveloadreset.js" charset="utf-8" type="text/javascript"></script>
-        <script src="prestigeupgrades.js" charset="utf-8" type="text/javascript"></script>
+        <script src="prestigelayerone.js" charset="utf-8" type="text/javascript"></script>
         <script src="basicupgrades.js" charset="utf-8" type="text/javascript"></script>
-        <script src="variables.js" charset="utf-8" type="text/javascript"></script>
-        <script src="extrafunct.js" charset="utf-8" type="text/javascript"></script>
+        <script src="constants.js" charset="utf-8" type="text/javascript"></script>
+        <script src="gamevars.js" charset="utf-8" type="text/javascript"></script>
+        <script src="extrafuncts.js" charset="utf-8" type="text/javascript"></script>
         <script src="main.js" charset="utf-8" type="text/javascript"></script>
     </body>
 </html>
